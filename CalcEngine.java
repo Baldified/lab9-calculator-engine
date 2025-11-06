@@ -13,7 +13,9 @@ public class CalcEngine
     private char previousOperator;
     // The left operand to previousOperator.
     private int leftOperand;
-
+    private String title = "Super Calculator";
+    private String author = "Hacker T. Largebrain";
+    private String version = "version 0.2";
     /**
      * Create a CalcEngine instance.
      */
@@ -70,7 +72,7 @@ public class CalcEngine
         if(previousOperator == '+') {
             displayValue = leftOperand + displayValue;
         }
-        else {
+        else if(previousOperator == '-') {
             displayValue = leftOperand - displayValue;
         }
         leftOperand = 0;
@@ -82,6 +84,7 @@ public class CalcEngine
     public void clear()
     {
         displayValue = 0;
+        previousOperator = ' ';
     }
 
     /**
@@ -90,7 +93,7 @@ public class CalcEngine
      */
     public String getTitle()
     {
-        return "Super Calculator";
+        return title;
     }
 
     /**
@@ -99,7 +102,7 @@ public class CalcEngine
      */
     public String getAuthor()
     {
-        return "Hacker T. Largebrain";
+        return author;
     }
 
     /**
@@ -108,7 +111,7 @@ public class CalcEngine
      */
     public String getVersion()
     {
-        return "version 0.2";
+        return version;
     }
     
     /**
